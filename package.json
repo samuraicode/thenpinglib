@@ -1,0 +1,25 @@
+{
+  "name": "thenping",
+  "version": "1.0.0",
+  "description": "ThenPing API client for Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuraicode/thenpinglib.git"
+  },
+  "keywords": [
+    "thenping"
+  ],
+  "author": "Jeremy Noonan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuraicode/thenpinglib/issues"
+  },
+  "homepage": "https://github.com/samuraicode/thenpinglib#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
