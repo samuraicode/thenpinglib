@@ -1,7 +1,8 @@
 const request = require('request');
+const querystring = require('querystring');
 
 //ThenPing Client
-var ThenPing = function(name) {
+function ThenPing(name) {
 	if (!(this instanceof ThenPing)) {
 		return new ThenPing(name);
 	}
@@ -9,7 +10,7 @@ var ThenPing = function(name) {
 	var self = this;
 	var ping_name = name;
 
-	this.path = `https://thenping.com/ping/${this.ping_name}/`;
+	this.path = `https://thenping.com/ping/${ping_name}/`;
 }
 
 /**
@@ -22,7 +23,9 @@ var ThenPing = function(name) {
  * @param  {cb}			cb      	callback of the form: function (error, response, body)
  */
 ThenPing.prototype.say = function (message, cb) {
-	request(`${this.path}message`, cb);
+	var msg = querystring.escape(message);
+	var msgPath = `${this.path}${msg}`;
+	request(msgPath, cb);
 }
 
-exports.ThenPing;
+module.exports = ThenPing;
